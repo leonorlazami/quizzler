@@ -110,7 +110,7 @@ function App() {
       setIsLoading(true);
       if (status === "active") {
         fetch(
-          `https://opentdb.com/api.php?amount=15&category=${category}&difficulty=${difficulty}&type=multiple`
+          `https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`
         )
           .then((res) => res.json())
           .then((data) =>

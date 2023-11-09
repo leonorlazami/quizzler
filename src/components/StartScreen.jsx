@@ -24,7 +24,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           <option value="9">General Knowledge</option>
           <option value="11">Film</option>
           <option value="12">Music</option>
-          <option value="15 Games">Video Games</option>
+          <option value="15">Video Games</option>
         </select>
       </div>
       <button onClick={() => dispatch({ type: "start" })}>Lets start</button>
