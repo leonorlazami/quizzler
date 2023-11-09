@@ -15,8 +15,8 @@ const initialState = {
   index: 0,
   answer: null,
   points: 0,
-  difficulty: null,
-  category: null,
+  difficulty: "easy",
+  category: "23",
 };
 
 function reducer(state, action) {
@@ -85,7 +85,7 @@ function reducer(state, action) {
       return {
         ...initialState,
         questions: state.questions,
-        status: "ready",
+        status: "idle",
       };
     }
     default:
@@ -98,6 +98,8 @@ function App() {
     { status, questions, index, answer, points, category, difficulty },
     dispatch,
   ] = useReducer(reducer, initialState);
+  console.log("diff from app", difficulty);
+  console.log("category from app", category);
   const [isLoading, setIsLoading] = useState(false);
   console.log("questions", questions);
   console.log("question length", questions.length);
@@ -106,7 +108,7 @@ function App() {
   useEffect(
     function () {
       setIsLoading(true);
-      if (status === "active" && category && difficulty) {
+      if (status === "active") {
         fetch(
           `https://opentdb.com/api.php?amount=15&category=${category}&difficulty=${difficulty}&type=multiple`
         )
@@ -119,7 +121,10 @@ function App() {
     },
     [status, category, difficulty]
   );
-
+  console.log(
+    "fetch",
+    `https://opentdb.com/api.php?amount=15&category=${category}&difficulty=${difficulty}&type=multiple`
+  );
   return (
     <div>
       <Header />

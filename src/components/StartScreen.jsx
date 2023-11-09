@@ -19,7 +19,6 @@ const StartScreen = ({ dispatch, numQuestions }) => {
       <div>
         <h3>Select category:</h3>
         <select onChange={handleCategoryChange}>
-          <option value="26">celebrities</option>
           <option value="23">history</option>
           <option value="20">Mythology</option>
           <option value="9">General Knowledge</option>
