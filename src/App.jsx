@@ -8,7 +8,10 @@ import Question from "./components/Question";
 import NextButton from "./components/NextButton";
 import Footer from "./components/Footer";
 import FinishedScreen from "./components/FinishedScreen";
+import Timer from "./components/Timer";
+import Progress from "./components/Progress";
 
+const SECS_PER_Q = 15;
 const initialState = {
   questions: [],
   status: "idle",
@@ -17,6 +20,7 @@ const initialState = {
   points: 0,
   difficulty: "easy",
   category: "23",
+  secondsRemaining: null,
 };
 
 function reducer(state, action) {
@@ -25,8 +29,7 @@ function reducer(state, action) {
       const temp = {
         ...state,
         questions: action.payload,
-        // incorrect_answers: action.payload.results.incorrect_answers,
-        // correct_answer: action.payload.results.correct_answer,
+        secondsRemaining: action.payload.length * SECS_PER_Q,
         status: "ready",
       };
 
@@ -88,6 +91,15 @@ function reducer(state, action) {
         status: "idle",
       };
     }
+    case "tick":
+      return {
+        ...state,
+        secondsRemaining: state.secondsRemaining - 1,
+        status:
+          state.secondsRemaining <= 0 && state.status === "active"
+            ? "finished"
+            : state.status,
+      };
     default:
       throw new Error("Action unknown");
   }
@@ -95,16 +107,24 @@ function reducer(state, action) {
 
 function App() {
   const [
-    { status, questions, index, answer, points, category, difficulty },
+    {
+      status,
+      questions,
+      index,
+      answer,
+      points,
+      category,
+      difficulty,
+      secondsRemaining,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
-  console.log("diff from app", difficulty);
-  console.log("category from app", category);
+
   const [isLoading, setIsLoading] = useState(false);
-  console.log("questions", questions);
-  console.log("question length", questions.length);
-  console.log(status);
+
   const numQuestions = questions.length;
+  const maxPossiblePoints = questions.length * 10;
+
   useEffect(
     function () {
       setIsLoading(true);
@@ -121,10 +141,9 @@ function App() {
     },
     [status, category, difficulty]
   );
-  console.log(
-    "fetch",
-    `https://opentdb.com/api.php?amount=15&category=${category}&difficulty=${difficulty}&type=multiple`
-  );
+  console.log(status);
+  console.log("seconds", secondsRemaining);
+  console.log(questions.length);
   return (
     <div>
       <Header />
@@ -134,24 +153,38 @@ function App() {
         {status === "idle" && <StartScreen dispatch={dispatch} />}
         {status === "ready" && questions.length > 0 && (
           <>
+            <Progress
+              index={index}
+              numQuestions={numQuestions}
+              dispatch={dispatch}
+              maxPossiblePoints={maxPossiblePoints}
+              points={points}
+            />
             <Question
               question={questions[index]}
               dispatch={dispatch}
               answer={answer}
-            />
-            <NextButton
-              dispatch={dispatch}
-              answer={answer}
-              index={index}
               numQuestions={numQuestions}
             />
+
+            <Footer>
+              <Timer secondsRemaining={secondsRemaining} dispatch={dispatch} />
+              <NextButton
+                dispatch={dispatch}
+                answer={answer}
+                index={index}
+                numQuestions={numQuestions}
+              />
+            </Footer>
           </>
         )}
 
-        <Footer></Footer>
-
         {status === "finished" && (
-          <FinishedScreen points={points} dispatch={dispatch} />
+          <FinishedScreen
+            points={points}
+            dispatch={dispatch}
+            maxPossiblePoints={maxPossiblePoints}
+          />
         )}
       </main>
     </div>

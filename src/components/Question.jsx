@@ -1,12 +1,16 @@
 import React from "react";
 import Options from "./Options";
 
-const Question = ({ question, answer, dispatch }) => {
+const Question = ({ question, answer, dispatch, numQuestions }) => {
   const decodedQuestion = decodeHTML(question?.question);
 
   return (
-    <div>
-      <h3 dangerouslySetInnerHTML={{ __html: decodedQuestion }} />
+    <div className="flex flex-col text-white text-md  font-primary mx-4 w-auto gap-5 my-6 px-4  bg-secondary rounded-xl py-5 ">
+      <h2
+        dangerouslySetInnerHTML={{ __html: decodedQuestion }}
+        className="mb-5"
+      />
+
       <Options question={question} dispatch={dispatch} answer={answer} />
     </div>
   );
@@ -15,6 +19,7 @@ const Question = ({ question, answer, dispatch }) => {
 function decodeHTML(html) {
   var txt = document.createElement("textarea");
   txt.innerHTML = html;
+
   return txt.value;
 }
 
