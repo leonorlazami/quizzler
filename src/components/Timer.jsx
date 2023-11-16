@@ -23,7 +23,7 @@ const Timer = ({ dispatch, secondsRemaining }) => {
   const seconds = secondsRemaining % 60;
 
   return (
-    <div className="text-[#FECE2F] flex w-1/2 justify-center items-center font-primary font-bold text-xl float-left ">
+    <div className="text-[#FECE2F] flex w-1/2 justify-center items-center font-primary font-bold text-xl float-left  ">
       <p className="border-2 rounded-xl px-4 pt-1 pb-1  border-[#FECE2F]  text-center">
         {mins < 10 && "0"}
         {mins}:{seconds < 10 && "0"}

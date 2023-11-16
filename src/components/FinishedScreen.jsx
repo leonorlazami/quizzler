@@ -10,7 +10,7 @@ const FinishedScreen = ({ points, dispatch, maxPossiblePoints }) => {
 
   return (
     <>
-      <div className="flex flex-col bg-[#fece2f] rounded-xl mx-4 px-4 py-4">
+      <div className="flex flex-col bg-[#fece2f] rounded-xl mx-4 px-4 py-4 md:w-1/2 md:mx-auto ">
         <p className="font-primary text-center">
           <span>{emoji}</span>
           You scored <strong>{points}</strong> out of {maxPossiblePoints} (
@@ -19,7 +19,7 @@ const FinishedScreen = ({ points, dispatch, maxPossiblePoints }) => {
       </div>
       <div className="flex w-full justify-center mt-4">
         <button
-          className="py-2 rounded-xl text-[#FECE2F]  font-primary text-xl  border-2 border-[#FECE2F]    px-4 pt-1 pb-1 "
+          className="py-2 rounded-xl text-[#FECE2F]  font-primary text-xl  border-2 border-[#FECE2F] px-4 pt-1 pb-1 "
           onClick={() => dispatch({ type: "reset" })}
         >
           Reset Quiz

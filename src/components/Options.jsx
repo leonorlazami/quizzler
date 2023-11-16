@@ -24,7 +24,7 @@ const Options = ({ question, dispatch, answer, numQuestion }) => {
   };
   const hasAnswered = answer !== null;
   return (
-    <div className="flex flex-col justify-around mx-auto gap-5 font-primary">
+    <div className="flex flex-col justify-around mx-auto gap-5 font-primary md:text-xl">
       {randomOptions.map((option, index) => (
         <button
           className={`border border-[#FECE2F] px-3 py-2 rounded-xl ${

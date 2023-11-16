@@ -26,9 +26,9 @@ const StartScreen = ({ dispatch, numQuestions }) => {
 
   return (
     <div className="flex flex-col items-center gap-4 w-full font-primary font-bold ">
-      <div className=" flex-col w-[90%] items-center rounded-xl px-4 py-4 bg-secondary">
-        <h3 className="text-white ml-2">Choose your difficulty:</h3>
-        <div className="flex gap-5 mt-4 items-center justify-center ">
+      <div className=" flex-col w-[90%] items-center rounded-xl px-4 py-4 bg-secondary md:w-1/2 ">
+        <h3 className="text-white ml-2 md:text-2xl">Choose your difficulty:</h3>
+        <div className="flex gap-5 mt-4 items-center justify-center">
           <Button
             label="Easy"
             onClick={() => handleDifficultyClick("easy")}
@@ -47,9 +47,9 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           />
         </div>
       </div>
-      <div className=" px-4 py-4 rounded-xl w-[90%] mx-auto h-full mb-2  bg-tertiary">
-        <h3 className="text-white ml-2 mb-4">Select category:</h3>
-        <div className="grid grid-cols-2 grid-rows-3 gap-5 w-full h-full font-secondary tracking-widest">
+      <div className=" px-4 py-4 rounded-xl w-[90%] mx-auto h-full mb-2  bg-tertiary md:w-1/2">
+        <h3 className="text-white ml-2 mb-4 md:text-2xl">Select category:</h3>
+        <div className="grid grid-cols-2 grid-rows-3 gap-5 w-full h-full font-secondary tracking-widest md:text-2xl">
           <div
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("23")
@@ -60,7 +60,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             <span className="font-bold text-white uppercase text-center text-md">
               history
             </span>
-            <div className="bg-history-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2"></div>
+            <div className="bg-history-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2 md:h-[16rem]"></div>
 
             <Button
               label={isCategorySelected("23") ? "Selected" : "Select"}
@@ -79,7 +79,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             <span className="font-bold text-white uppercase text-center text-md ">
               mythology
             </span>
-            <div className="bg-mythology-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2"></div>
+            <div className="bg-mythology-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2 md:h-[16rem]"></div>
 
             <Button
               label={isCategorySelected("20") ? "Selected" : "Select"}
@@ -96,7 +96,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             <span className="font-bold text-white uppercase text-center text-md">
               general knowledge
             </span>
-            <div className="bg-general-knowledge-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2"></div>
+            <div className="bg-general-knowledge-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2 md:h-[16rem]"></div>
 
             <Button
               label={isCategorySelected("9") ? "Selected" : "Select"}
@@ -115,7 +115,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             <span className="font-bold text-white uppercase text-center text-md">
               film
             </span>
-            <div className="bg-film-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2"></div>
+            <div className="bg-film-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2 md:h-[16rem]"></div>
 
             <Button
               label={isCategorySelected("11") ? "Selected" : "Select"}
@@ -133,7 +133,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             <span className="font-bold text-white uppercase text-center text-md">
               music
             </span>
-            <div className="bg-music-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2"></div>
+            <div className="bg-music-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2 md:h-[16rem]"></div>
 
             <Button
               label={isCategorySelected("12") ? "Selected" : "Select"}
@@ -152,7 +152,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             <span className="font-bold text-white uppercase text-center text-md">
               video games
             </span>
-            <div className="bg-video-games-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2"></div>
+            <div className="bg-video-games-bg  bg-contain bg-no-repeat bg-center rounded-md p-5 h-32 mb-2 md:h-[16rem]"></div>
 
             <Button
               label={isCategorySelected("15") ? "Selected" : "Select"}
@@ -162,7 +162,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
         </div>
 
-        <div className="w-1/2 mx-auto mt-5">
+        <div className="w-1/2 mx-auto mt-5 md:flex">
           <Button label="Let's start" onClick={handleStartClick} />
         </div>
       </div>
