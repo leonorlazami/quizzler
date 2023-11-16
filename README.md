@@ -24,7 +24,7 @@ Quizzler is built with React, ensuring a fast and efficient web application. Use
 
 ## Screenshots
 
-![](https://imgur.com/mV3CiPF)
+![](https://i.imgur.com/mV3CiPF.png)
 
 ## Getting Started
 
