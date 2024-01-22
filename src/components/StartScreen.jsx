@@ -51,6 +51,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
         <h3 className="text-white ml-2 mb-4 md:text-2xl">Select category:</h3>
         <div className="grid grid-cols-2 grid-rows-3 gap-5 w-full h-full font-secondary tracking-widest md:text-2xl">
           <div
+            onClick={() => handleCategoryClick("23")}
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("23")
                 ? "bg-btn-bg rounded-3xl opacity-85 "
@@ -70,6 +71,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
 
           <div
+            onClick={() => handleCategoryClick("20")}
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("20")
                 ? "bg-btn-bg rounded-3xl opacity-85 "
@@ -89,6 +91,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
 
           <div
+            onClick={() => handleCategoryClick("9")}
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("9") ? "bg-btn-bg rounded-3xl opacity-85 " : ""
             }`}
@@ -106,6 +109,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
 
           <div
+            onClick={() => handleCategoryClick("11")}
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("11")
                 ? "bg-btn-bg rounded-3xl opacity-85 "
@@ -124,6 +128,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
             />
           </div>
           <div
+            onClick={() => handleCategoryClick("12")}
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("12")
                 ? "bg-btn-bg rounded-3xl opacity-85 "
@@ -143,6 +148,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
 
           <div
+            onClick={() => handleCategoryClick("15")}
             className={`flex flex-col justify-between gap-2 py-3 px-3 ${
               isCategorySelected("15")
                 ? "bg-btn-bg rounded-3xl opacity-85 "
@@ -162,7 +168,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
         </div>
 
-        <div className="w-1/2 mx-auto mt-5 md:flex">
+        <div className="w-1/2 mx-auto  md:flex fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[rgb(20,171,181)] rounded-2xl ">
           <Button label="Let's start" onClick={handleStartClick} />
         </div>
       </div>
