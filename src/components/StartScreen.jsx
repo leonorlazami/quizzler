@@ -168,7 +168,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
         </div>
 
-        <div className="w-1/2 mx-auto  md:flex fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[rgb(20,171,181)] rounded-2xl ">
+        <div className="md:w-1/2  md:relative md:flex fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[rgb(20,171,181)] rounded-2xl md:bg-transparent">
           <Button label="Let's start" onClick={handleStartClick} />
         </div>
       </div>
