@@ -25,8 +25,8 @@ const StartScreen = ({ dispatch, numQuestions }) => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 w-full font-primary font-bold ">
-      <div className=" flex-col w-[90%] items-center rounded-xl px-4 py-4 bg-secondary md:w-1/2 ">
+    <div className="flex flex-col items-center gap-4 w-full font-primary font-bold">
+      <div className=" flex-col w-[90%] items-center rounded-xl px-4 py-4 bg-primary md:w-1/2 ">
         <h3 className="text-white ml-2 md:text-2xl">Choose your difficulty:</h3>
         <div className="flex gap-5 mt-4 items-center justify-center">
           <Button
@@ -47,7 +47,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           />
         </div>
       </div>
-      <div className=" px-4 py-4 rounded-xl w-[90%] mx-auto h-full mb-2  bg-tertiary md:w-1/2">
+      <div className=" px-4 py-4 rounded-xl w-[90%] mx-auto h-full mb-8  bg-primary md:w-1/2">
         <h3 className="text-white ml-2 mb-4 md:text-2xl">Select category:</h3>
         <div className="grid grid-cols-2 grid-rows-3 gap-5 w-full h-full font-secondary tracking-widest md:text-2xl">
           <div
@@ -168,7 +168,7 @@ const StartScreen = ({ dispatch, numQuestions }) => {
           </div>
         </div>
 
-        <div className="md:w-1/2  md:relative md:flex fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[rgb(20,171,181)] rounded-2xl md:bg-transparent">
+        <div className="md:w-1/2  md:relative md:flex fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 bg-[rgb(20,171,181)] rounded-2xl md:bg-transparent md:mt-4 md:py-2">
           <Button label="Let's start" onClick={handleStartClick} />
         </div>
       </div>

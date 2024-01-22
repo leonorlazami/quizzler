@@ -15,9 +15,7 @@ export default {
         'video-games-bg': "url('./img/video-games-1.png')",
       },
       backgroundColor: {
-        'primary': '#252C4A',
-        'secondary': 'rgb(42,17,77)',
-        'tertiary': 'rgb(39,20,63)',
+        'primary': '#3d0066',
         'btn-bg': 'rgb(20,171,181)',
         'btn-bg-secondary': '#FECE2F'
       },
